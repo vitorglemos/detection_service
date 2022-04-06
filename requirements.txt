@@ -1,4 +1,4 @@
-git+https://github.com:vitorglemos/age-classification.git
+git+https://github.com/vitorglemos/age-classification.git
 cached_property
 opencv-python~=3.4.11.43
 fastapi~=0.75.1
