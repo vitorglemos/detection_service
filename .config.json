@@ -1,0 +1,30 @@
+{
+  "app": {
+    "name": "Detection Items",
+    "description": "Oi test project",
+    "version": "0.0.1"
+  },
+  "author": {
+    "name": "Vitor Lemos",
+    "email": "vgamalemos@gmail.com"
+  },
+  "license": {
+    "name": "MIT",
+    "url": "https://opensource.org/licenses/MIT"
+  },
+  "fastapi": {
+    "host": "127.0.0.1",
+    "port": 8100
+  },
+  "model": {
+    "path_cfg": "model/yolov3_model_config_c27.cfg",
+    "path_weight": "model/yolov3_model_e5000_c27.weights",
+    "path_label": "model/logos.names",
+    "threshold": 0.60,
+    "description": "object detection model"
+  },
+  "image": {
+     "height": 512,
+     "width": 512
+  }
+}
