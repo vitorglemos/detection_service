@@ -11,4 +11,4 @@ with open(str(Path(__file__).parents[0] / ".config.json")) as fb:
     app = create_app(config)
 
 if __name__ == '__main__':
-    uvicorn.run("run:app", host="0.0.0.0", port=8100, log_level="info")
+    uvicorn.run("run:app", host="127.0.0.1", port=8100, log_level="info")

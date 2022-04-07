@@ -1,5 +1,7 @@
 from ..__version__ import __version__
 
+import os
+
 from app.v1 import schema
 from app.v1 import helper
 from app.v1 import manager
@@ -9,9 +11,18 @@ from fastapi.responses import JSONResponse
 from fastapi.encoders import jsonable_encoder
 from fastapi.templating import Jinja2Templates
 
+
+def locate_model():
+    path_dir = os.path.dirname(os.path.realpath(__file__))
+    file_name_face_model = os.path.basename("./model/haarcascade_frontalface_default.xml")
+    path_model_face = os.path.join(path_dir, file_name_face_model)
+    return path_model_face
+
+
 router_v1 = APIRouter(prefix="/v1")
+
 loaded_model = manager.ModelManagement(1024, 1024, 0.4)
-loaded_model.load_model("haarcascade_frontalface_default.xml")
+loaded_model.load_model(locate_model())
 
 templates = Jinja2Templates("html")
 

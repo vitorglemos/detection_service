@@ -1,0 +1,9 @@
+version: "3"
+services:
+  web:
+    build: .
+    container_name: "api-ml"
+    ports:
+      - "8000:5000"
+    volumes:
+      - ./app/:/app

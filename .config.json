@@ -17,11 +17,8 @@
     "port": 8100
   },
   "model": {
-    "path_cfg": "model/yolov3_model_config_c27.cfg",
-    "path_weight": "model/yolov3_model_e5000_c27.weights",
-    "path_label": "model/logos.names",
-    "threshold": 0.60,
-    "description": "object detection model"
+    "face_model": "model",
+    "age_model": "model"
   },
   "image": {
      "height": 512,

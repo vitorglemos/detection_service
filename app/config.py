@@ -17,10 +17,8 @@ class Config:
         self.host = config_json["fastapi"].get("host")
         self.port = config_json["fastapi"].get("port")
 
-        self.model_cfg = config_json["model"].get("path_cfg")
-        self.model_weight = config_json["model"].get("path_weight")
-        self.model_label = config_json["model"].get("path_label")
-        self.model_threshold = config_json["model"].get("threshold")
+        self.model_face = config_json["model"].get("face_model")
+        self.model_age = config_json["model"].get("age_model")
 
         self.img_height = config_json["image"].get("height")
         self.img_width = config_json["image"].get("width")

@@ -1,4 +1,5 @@
 import io
+import os
 import re
 import cv2
 import base64
@@ -20,7 +21,7 @@ from age_classification.manager.manager import ModelManager as age_model
 class ModelManagement:
     def __init__(self, height, width, threshold):
         self.age_model = age_model()
-        self.age_model.load_model()
+        self.age_model.load_model(self.locate_model("./model/weights.h5"))
         self.image_height = height
         self.image_width = width
         self.threshold = threshold
@@ -28,6 +29,13 @@ class ModelManagement:
         self.models = None
         self.models_eye = None
         self.labels = None
+
+    @staticmethod
+    def locate_model(path_name: str):
+        path_dir = os.path.dirname(os.path.realpath(__file__))
+        file_name_age_model = os.path.basename(path_name)
+        path_model_age = os.path.join(path_dir, file_name_age_model)
+        return path_model_age
 
     @staticmethod
     def get_hist_age(df: dict, fields: list):
