@@ -1,3 +1,4 @@
+setuptools==57.0.0
 git+https://github.com/vitorglemos/age-classification.git
 cached_property
 fastapi~=0.75.1
